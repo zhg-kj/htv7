@@ -12,35 +12,6 @@ class DesoApi {
 
     // TRANSACTIONS
     // USERS
-    async updateProfile(publicKey, username, description, pfp) {
-      const path = "/v0/update-profile"
-      const data = {
-        UpdaterPublicKeyBase58Check: publicKey,
-        NewUsername: username,
-        NewDescription: description,
-        NewProfilePic: pfp,
-        NewCreatorBasisPoints: 1000,
-        MinFeeRateNanosPerKB: 0,
-      }
-
-      try{
-        const result = await this.getClient().post(path, data)
-        return result?.data
-      } catch (error) {
-          console.log(error)
-          return null
-      }
-    }
-
-    async follow(followerKey, followedKey, unfollow) {
-      const path = "/v0/update-profile"
-      const data = {
-        FollowerPublicKeyBase58Check: followerKey,
-        FollowedPublicKeyBase58Check: followedKey,
-        IsUnfollow: unfollow,
-        MinFeeRateNanosPerKB: 0,
-      }
-    }
 
     // POSTS
     async submitPost(publicKey, body) {
@@ -61,7 +32,7 @@ class DesoApi {
           PostHashHexToModify: "",
           ParentStakeID: "",
           Title: "",
-          BodyObj: {Body: body, ImageURLs: []},
+          BodyObj: {Body: body, ImageURLs: [], VideoURLs: []},
           RecloutedPostHashHex: "",
           Sub: "",
           IsHidden:  false,

@@ -11,7 +11,7 @@ const Testing = (props) => {
 
   const submitPost = async () => {
     console.log(props.publicKey)
-    await desoApi.submitPost(props.publicKey, "test")
+    await desoApi.submitPost(props.publicKey, "Another test")
   }
 
   return (
