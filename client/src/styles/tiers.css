@@ -1,27 +1,21 @@
-
 .float-container{
     position: relative;
     display: flex;
     justify-content: center;
 
-    
-    
     padding: 20px;
     top: 200px;
     
 }
 
-
 .float-child{
     position: sticky;
     width: 31%;
-    height: 9cm;
     float:left;
     padding: 20px;
     border: 5px solid white;
     margin-right: 20px;
-    
-
+    overflow: hidden;
 }
 
 .t1{
@@ -58,17 +52,11 @@
     border: 5px solid white;
 }
 
-
 .float-container2{
     position: relative;
     display: flex;
     justify-content: center;
 
-    
-    
     padding: 20px;
     top: 690px;
-
 }
-
-
