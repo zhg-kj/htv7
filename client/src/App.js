@@ -9,7 +9,8 @@ import RecordList from "./components/recordList";
 import Edit from "./components/edit";
 import Create from "./components/create";
 import Login from "./Login";
- 
+import Testing from "./pages/apiTestingPage";
+
 // Misc
 import localStorageTTL from "./components/localStorageTTL";
 const IdentityUsersKey = "identityUsersV2"
@@ -47,7 +48,7 @@ const App = () => {
           style={{height: "100vh", width: "100vw", display: "none", position: "fixed",  zIndex: 1000, left: 0, top: 0}}
         ></iframe>
         <Routes>
-          <Route exact path="/" element={<RecordList />} />
+          <Route exact path="/" element={<Testing publicKey={publicKey} />} />
           <Route path="/edit/:id" element={<Edit />} />
           <Route path="/create" element={<Create />} />
           <Route path="/login" element={<Login />} />
