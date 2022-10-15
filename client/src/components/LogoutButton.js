@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DesoIdentity from "./DesoIdentity";
+import DesoIdentity from "../deso/desoIdentity";
 import localStorageTTL from "./localStorageTTL";
 const IdentityUsersKey = "identityUsersV2"
 

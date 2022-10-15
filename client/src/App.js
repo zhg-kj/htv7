@@ -39,7 +39,7 @@ const App = () => {
   else {
     return (
       <div>
-        <Navbar />
+        <Navbar publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey}/>
         <iframe
           title="desoidentity"
           id="identity"
