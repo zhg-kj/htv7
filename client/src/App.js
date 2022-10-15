@@ -8,7 +8,7 @@ import Navbar from "./components/navbar";
 import RecordList from "./components/recordList";
 import Edit from "./components/edit";
 import Create from "./components/create";
-import Login from "./Login";
+import Login from "./pages/login";
 import Testing from "./pages/apiTestingPage";
 
 // Misc
