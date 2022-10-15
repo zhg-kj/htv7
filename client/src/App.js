@@ -28,8 +28,8 @@ const App = () => {
       }
   
       if(user.publicKey){
-          setLoggedIn(true)
-          setPublicKey(user.publicKey)
+          setLoggedIn(true);
+          setPublicKey(user.publicKey);
       }
   }, []);
 
@@ -39,7 +39,7 @@ const App = () => {
   else {
     return (
       <div>
-        <Navbar />
+        <Navbar publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey}/>
         <iframe
           title="desoidentity"
           id="identity"
@@ -49,6 +49,7 @@ const App = () => {
         ></iframe>
         <Routes>
           <Route exact path="/" element={<Testing publicKey={publicKey} />} />
+          <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
           <Route path="/edit/:id" element={<Edit />} />
           <Route path="/create" element={<Create />} />
           <Route path="/login" element={<Login />} />
@@ -57,5 +58,6 @@ const App = () => {
     );
  }
 };
+}
  
 export default App;
