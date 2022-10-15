@@ -1,0 +1,80 @@
+
+.title{
+     colour: red;
+}
+
+
+.root{
+    background-color: pink;
+    height: 300vh;
+}
+
+
+.pic1{
+    position: absolute;
+    left: 705px;
+    top: 300px;
+    width: 1em;
+    height: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.main-profile{
+    width:12em;
+    height:12em;
+}
+
+.banner{
+    position: sticky;
+    width: max-content;
+    max-height: 10cm;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.banner-pic{
+    object-fit: fill;
+    min-width: 100vw;
+
+
+}
+
+.name2{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    
+    top: 500px;
+    width: 100%;
+}
+
+.sub{
+    font-size: 2em;
+}
+
+.bio2{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+    top:900px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 93.5%;
+
+    padding: 100px;
+    border: 5px solid white;
+    margin: 3cm;
+    
+    left: -2cm;
+
+}
+
+
