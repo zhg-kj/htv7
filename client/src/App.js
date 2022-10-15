@@ -9,7 +9,8 @@ import RecordList from "./components/recordList";
 import Edit from "./components/edit";
 import Create from "./components/create";
 import Login from "./Login";
- 
+import Testing from "./pages/apiTestingPage";
+
 // Misc
 import localStorageTTL from "./components/localStorageTTL";
 const IdentityUsersKey = "identityUsersV2"
@@ -39,6 +40,13 @@ const App = () => {
   return (
     <div>
       <Navbar publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey}/>
+      <iframe
+          title="desoidentity"
+          id="identity"
+          frameBorder="0"
+          src="https://identity.deso.org/embed?v=2"
+          style={{height: "100vh", width: "100vw", display: "none", position: "fixed",  zIndex: 1000, left: 0, top: 0}}
+        ></iframe>
       <Routes>
         <Route exact path="/" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
         <Route path="/edit/:id" element={<Edit />} />

@@ -1,7 +1,7 @@
 import axios from "axios"
-import DesoIdentity from "./components/DesoIdentity";
+import DesoIdentity from "./desoIdentity"
 
-const DEFAULT_NODE_URL = "https://node.deso.org"
+const DEFAULT_NODE_URL = "https://node.deso.org/api"
 let client = null
 
 class DesoApi {
@@ -70,9 +70,13 @@ class DesoApi {
 
       try{
           const result = await this.getClient().post(path, data)
+          console.log(result)
           const transactionHex = result.TransactionHex
+          console.log(transactionHex)
           const signedTransactionHex = await di.signTxAsync(transactionHex)
+          console.log(signedTransactionHex)
           const rtnSubmitTransaction = await this.submitTransaction(signedTransactionHex) 
+          console.log(rtnSubmitTransaction)
 
           if(rtnSubmitTransaction) {
             console.log('Submitted Post')
@@ -83,7 +87,7 @@ class DesoApi {
       }
     }
 
-  async submitTransaction  (signedTransactionHex){
+  async submitTransaction(signedTransactionHex) {
       if(!signedTransactionHex){
           console.log("signedTransactionHex is required")
           return
