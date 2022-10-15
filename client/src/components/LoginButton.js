@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import DesoIdentity from "./DesoIdentity";
-import localStorageTTL from "./localStorageTTL";
-
-const IdentityUsersKey = "identityUsersV2";
 
 // LoginButton requires setPublicKey and setLoggedIn
 const LoginButton = (props) => {
