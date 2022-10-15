@@ -39,6 +39,13 @@ const App = () => {
     return (
       <div>
         <Navbar />
+        <iframe
+          title="desoidentity"
+          id="identity"
+          frameBorder="0"
+          src="https://identity.deso.org/embed?v=2"
+          style={{height: "100vh", width: "100vw", display: "none", position: "fixed",  zIndex: 1000, left: 0, top: 0}}
+        ></iframe>
         <Routes>
           <Route exact path="/" element={<RecordList />} />
           <Route path="/edit/:id" element={<Edit />} />
