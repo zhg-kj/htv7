@@ -14,9 +14,21 @@ const Testing = (props) => {
     await desoApi.submitPost(props.publicKey, "Another test")
   }
 
+  const getSingleProfile = async () => {
+    const data = await desoApi.getSingleProfile(props.publicKey)
+    console.log(data)
+  }
+
+  const getPostsForPublicKey = async () => {
+    const data = await desoApi.getPostsForPublicKey(props.publicKey)
+    console.log(data)
+  }
+
   return (
     <div>
       <button onClick={() => submitPost()}>Submit Posts</button>
+      <button onClick={() => getSingleProfile()}>Get Profile</button>
+      <button onClick={() => getPostsForPublicKey()}>Get Post</button>
     </div>
   );
 };

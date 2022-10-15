@@ -36,7 +36,7 @@ class DesoIdentity {
   }
 
   signTxAsync(transactionHex) {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve, reject) => {
       this.signTxResolve = resolve
       this.transactionHex = transactionHex
       this.getInfo()
@@ -48,7 +48,7 @@ class DesoIdentity {
         encryptedSeedHex: user.encryptedSeedHex,
         transactionHex: transactionHex,
       }
-      const pm = await this.source.postMessage({
+      this.source.postMessage({
         id: id,
         service: 'identity',
         method: 'sign',
