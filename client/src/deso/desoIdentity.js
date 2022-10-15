@@ -35,13 +35,11 @@ class DesoIdentity {
     })
   }
 
-
   signTxAsync(transactionHex) {
     return new Promise((resolve, reject) => {
       this.signTxResolve = resolve
       this.transactionHex = transactionHex
       this.getInfo()
-
       const id = this.uuid()
       const user = JSON.parse(localStorage.getItem(this.IdentityUsersKey))
       const payload = {

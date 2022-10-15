@@ -47,14 +47,16 @@ const App = () => {
           src="https://identity.deso.org/embed?v=2"
           style={{height: "100vh", width: "100vw", display: "none", position: "fixed",  zIndex: 1000, left: 0, top: 0}}
         ></iframe>
-      <Routes>
-        <Route exact path="/" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
-        <Route path="/edit/:id" element={<Edit />} />
-        <Route path="/create" element={<Create />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </div>
-  );
+        <Routes>
+          <Route exact path="/" element={<Testing publicKey={publicKey} />} />
+          <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
+    );
+ }
 };
 }
  
