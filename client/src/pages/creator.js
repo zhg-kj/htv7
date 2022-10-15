@@ -77,28 +77,9 @@ function Creator() {
         My name is David Lin, a second year student at the unviersty of Toronto</h11>
     </div>
 
-    <div class='float-container2'>
-      <div class='float-child'>
-        <h7 className="t1">PREVIEW</h7>
-        <hr className='line'></hr>
-        <div className='preview'>
-            <img className="preview-img" src={image} alt="picture" />
-        </div>
-      </div>
-      <div class='float-child'>
-        <h8 className="t2">PREVIEW</h8>
-        <hr className='line'></hr>
-        <div className='preview'>
-            <img className="preview-img" src={image} alt="picture" />
-        </div>
-      </div>
-      <div class='float-child'>
-        <h9 className="t3">PREVIEW</h9>
-        <hr className='line'></hr>
-        <div className='preview'>
-            <img className="preview-img" src={image} alt="picture" />
-        </div>
-      </div>
+    <div className='gallery'>
+      
+      
     </div>
   </div>
   );
