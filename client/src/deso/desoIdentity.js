@@ -30,7 +30,7 @@ class DesoIdentity {
   
   logoutAsync(publicKey) {
     return new Promise((resolve, reject) => {
-      this.identityWindow = window.open('https://identity.deso.org/logout?publicKey='+publicKey, null, 'toolbar=no, width=800, height=1000, top=0, left=0')
+      this.identityWindow = window.open('https://identity.deso.org/logout?publicKey=' + publicKey, null, 'toolbar=no, width=800, height=1000, top=0, left=0')
       this.loginResolve = resolve
     })
   }
@@ -84,7 +84,13 @@ class DesoIdentity {
     if (this.identityWindow) {
       this.identityWindow.close();
       this.identityWindow = null;
+
       const user = payload.users[payload.publicKeyAdded]
+
+      if (Object.keys(payload.users).length !== 0 && !user) {
+        return;
+      }
+
       if (user) {
         user['publicKey'] = payload.publicKeyAdded
       }
