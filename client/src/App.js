@@ -36,11 +36,11 @@ const App = () => {
   if (!loggedIn) {
     return (<Login publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey}/>);
   }
-  
-  return (
-    <div>
-      <Navbar publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey}/>
-      <iframe
+  else {
+    return (
+      <div>
+        <Navbar />
+        <iframe
           title="desoidentity"
           id="identity"
           frameBorder="0"
