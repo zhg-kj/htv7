@@ -78,19 +78,18 @@ class DesoApi {
   }
     
     // GET
-    async getPostsForPublicKey(username, last_post_hash_hex) {
-        if(!username){
-            console.log("username is required")
+    async getPostsForPublicKey(publicKey) {
+        if(!publicKey) {
+            console.log("public key is required")
             return
         }
 
         const path = "/v0/get-posts-for-public-key"
         const data = {
-            PublicKeyBase58Check : "",
-            Username : username,
+            PublicKeyBase58Check : publicKey,
+            Username : "",
             ReaderPublicKeyBase58Check : "",
-            LastPostHashHex : last_post_hash_hex,
-            NumToFetch : 10,
+            NumToFetch : 1,
             MediaRequired : false
         }
         try{
