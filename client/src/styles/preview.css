@@ -1,8 +1,5 @@
-
 .preview{
-    width: 5cm;
-    height: 7cm;
-
+    overflow: hidden;
 }
 
 .preview-img{
