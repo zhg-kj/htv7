@@ -1,4 +1,4 @@
-import localStorageTTL from "./localStorageTTL"
+import localStorageTTL from "../components/localStorageTTL"
 
 class DesoIdentity {
   constructor() {
