@@ -11,6 +11,7 @@ import Create from "./components/create";
 import Login from "./pages/login";
 import Testing from "./pages/apiTestingPage";
 import Creator from"./pages/creator";
+import Profile from "./pages/profile";
 
 // Misc
 import localStorageTTL from "./components/localStorageTTL";
@@ -52,6 +53,7 @@ const App = () => {
           <Route exact path="/" element={<Testing publicKey={publicKey} />} />
           <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
           <Route path="/creator" element={<Creator />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/edit/:id" element={<Edit />} />
           <Route path="/create" element={<Create />} />
           <Route path="/login" element={<Login />} />
