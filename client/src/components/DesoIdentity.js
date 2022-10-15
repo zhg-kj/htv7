@@ -36,7 +36,6 @@ class DesoIdentity {
   }
 
 
-
   signTxAsync(transactionHex) {
     return new Promise((resolve, reject) => {
       this.signTxResolve = resolve
@@ -90,10 +89,17 @@ class DesoIdentity {
     if (this.identityWindow) {
       this.identityWindow.close();
       this.identityWindow = null;
+
       const user = payload.users[payload.publicKeyAdded]
+
+      if (Object.keys(payload.users).length !== 0 && !user) {
+        return;
+      }
+
       if (user) {
         user['publicKey'] = payload.publicKeyAdded
       }
+
       localStorageTTL.setWithExpiry(this.IdentityUsersKey, JSON.stringify(user), 10000);
       this.loginResolve(user)
     }

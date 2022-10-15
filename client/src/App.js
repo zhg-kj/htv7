@@ -27,27 +27,26 @@ const App = () => {
       }
   
       if(user.publicKey){
-          setLoggedIn(true)
-          setPublicKey(user.publicKey)
+          setLoggedIn(true);
+          setPublicKey(user.publicKey);
       }
   }, []);
 
   if (!loggedIn) {
     return (<Login publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey}/>);
   }
-  else {
-    return (
-      <div>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<RecordList />} />
-          <Route path="/edit/:id" element={<Edit />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </div>
-    );
- }
+  
+  return (
+    <div>
+      <Navbar publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey}/>
+      <Routes>
+        <Route exact path="/" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
+        <Route path="/edit/:id" element={<Edit />} />
+        <Route path="/create" element={<Create />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </div>
+  );
 };
  
 export default App;

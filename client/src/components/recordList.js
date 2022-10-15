@@ -18,7 +18,7 @@ const Record = (props) => (
  </tr>
 );
  
-export default function RecordList() {
+export default function RecordList(props) {
  const [records, setRecords] = useState([]);
  
  // This method fetches the records from the database.
@@ -68,6 +68,7 @@ export default function RecordList() {
  return (
    <div>
      <h3>Record List</h3>
+     <h1>{props.publicKey}</h1>
      <table className="table table-striped" style={{ marginTop: 20 }}>
        <thead>
          <tr>
