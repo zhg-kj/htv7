@@ -8,7 +8,7 @@ export class Title extends React.Component{
             <div className='intro'>
                 <h1>THE BITch</h1>
                 <h3>WE HAVE ALL YOU WANT!</h3>
-                <button type="button" className="browse">Browse</button>
+                <button type="button" className="browse">Get Started</button>
             </div>
         )
     }

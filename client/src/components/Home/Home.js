@@ -3,12 +3,17 @@ import React from 'react';
 import "./Home.css"
 import {Title} from "../Title/Title";
 import {BlogList} from "../BlogList/BlogList";
+import {SearchBar} from "../SearchBar/SearchBar";
+import {Introduction} from "../Introduction/Introduction";
+import {Join} from "../Join/Join";
 
 export class Home extends React.Component{
     render(){
         return(
             <div>
                 <Title/>
+                <SearchBar/>
+                <Introduction/>
                 <div className="content">
                     <div className="left">
                         <BlogList title="Top Creators" num={8} style={{float:"left"}}/>
@@ -18,6 +23,7 @@ export class Home extends React.Component{
                         <BlogList title="Most Recent" num={6}/>
                     </div>
                 </div>
+                <Join/>
             </div>
         );
     }
