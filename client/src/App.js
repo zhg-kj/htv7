@@ -8,13 +8,14 @@ import Navbar from "./components/navbar";
 import RecordList from "./components/recordList";
 import Edit from "./components/edit";
 import Create from "./components/create";
+import Creator from "./pages/creator";
  
 const App = () => {
  return (
    <div>
      <Navbar />
      <Routes>
-       <Route exact path="/" element={<RecordList />} />
+       <Route exact path="/" element={<Creator />} />
        <Route path="/edit/:id" element={<Edit />} />
        <Route path="/create" element={<Create />} />
      </Routes>

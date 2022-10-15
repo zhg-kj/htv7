@@ -1,0 +1,12 @@
+
+.preview{
+    width: 5cm;
+    height: 7cm;
+
+}
+
+.preview-img{
+    max-height: fit-content;
+    max-width: fit-content;
+    object-fit: fill;
+}

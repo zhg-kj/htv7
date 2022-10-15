@@ -28,10 +28,30 @@ export default function Navbar() {
              <NavLink className="nav-link" to="/create">
                Create Record
              </NavLink>
+
+
+
            </li>
          </ul>
        </div>
+
+       <div className="creator button" id="navbarSupportedContent">
+         <ul className="navbar-nav ml-auto">
+           <li className="nav-item">
+             <NavLink className="nav-link" to="pages/creator">
+               Logout
+             </NavLink>
+           </li>
+         </ul>
+       </div>
+
+
+
+
+
+
      </nav>
+     
    </div>
  );
 }
