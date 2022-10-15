@@ -48,15 +48,12 @@ class DesoIdentity {
         encryptedSeedHex: user.encryptedSeedHex,
         transactionHex: transactionHex,
       }
-
       this.source.postMessage({
         id: id,
         service: 'identity',
         method: 'sign',
         payload: payload
       }, "*")
-
-
     })
   }
 
@@ -66,20 +63,20 @@ class DesoIdentity {
 
   uuid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
+        var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
     });
   }
+
   getInfo() {
     console.log("getinfo")
     const id = this.uuid()
 
-    this.source.postMessage({
-      id: id,
-      service: 'identity',
-      method: 'info'
-    }, "*");
-
+      this.source.postMessage({
+        id: id,
+        service: 'identity',
+        method: 'info'
+      }, "*");
   }
 
   handleLogin(payload) {
@@ -91,7 +88,7 @@ class DesoIdentity {
       if (user) {
         user['publicKey'] = payload.publicKeyAdded
       }
-      localStorageTTL.setWithExpiry(this.IdentityUsersKey, JSON.stringify(user), 10000);
+      localStorageTTL.setWithExpiry(this.IdentityUsersKey, JSON.stringify(user), 10000000000000);
       this.loginResolve(user)
     }
   }
@@ -133,29 +130,28 @@ class DesoIdentity {
   }
 
   postMessage(e) {
-    this.init ? this.iframe.contentWindow.postMessage(e, "*") : this.pendingRequests.push(e)
+    this.init ? this.iframe.contentWindow.postMessage(e, "*") : this.pendingRequests.push(e)    
   }
 
   addListener() {
     window.addEventListener('message', message => {
-      // console.log(message)
+      //console.log(message)
 
       const { data: { id: id, method: method, service: service, payload: payload } } = message;
-      if (service !== "identity") { return }
+      if (service !== "identity"){ return }
 
 
       if (method == 'initialize') {
-        this.handleInit(message)
+          this.handleInit(message)
       } else if ('signedTransactionHex' in payload) {
-        console.log('signedTransactionHex', payload)
-        this.handleSign(payload)
+          console.log('signedTransactionHex', payload)
+          this.handleSign(payload)
       } else if ('approvalRequired' in payload) {
-        console.log('approvalRequired', payload)
-        this.approveSignTx(this.transactionHex)
+          console.log('approvalRequired', payload)
+          this.approveSignTx(this.transactionHex)
       } else if (method == 'login') {
-        this.handleLogin(payload)
+          this.handleLogin(payload)
       }
-
     })
   }
 

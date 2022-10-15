@@ -9,8 +9,9 @@ const Testing = (props) => {
     setDesoApi(deso);
   }, []);
 
-  const submitPost = () => {
-    desoApi.submitPost(props.publicKey, {Body: "TEST", ImageURLs: []})
+  const submitPost = async () => {
+    console.log(props.publicKey)
+    await desoApi.submitPost(props.publicKey, "test")
   }
 
   return (

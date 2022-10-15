@@ -70,8 +70,8 @@ class DesoApi {
 
       try{
           const result = await this.getClient().post(path, data)
-          console.log(result)
-          const transactionHex = result.TransactionHex
+          console.log(result.data)
+          const transactionHex = result.data.TransactionHex
           console.log(transactionHex)
           const signedTransactionHex = await di.signTxAsync(transactionHex)
           console.log(signedTransactionHex)
@@ -218,14 +218,13 @@ class DesoApi {
         
     }
 
-    getClient(){
+    getClient (){
         if (client) return client
         client = axios.create({
             baseURL: this.baseUrl,
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json",
-              "Accept-Encoding": "gzip",
             },
           })
           return client
