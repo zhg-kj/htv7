@@ -33,8 +33,6 @@ class DesoIdentity {
       })
     }
   
-  
-  
     signTxAsync(transactionHex) {
       return new Promise((resolve, reject) => {
         this.signTxResolve = resolve
