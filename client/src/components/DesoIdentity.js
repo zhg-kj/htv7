@@ -27,14 +27,21 @@ class DesoIdentity {
     this.identityWindow = window.open('https://identity.deso.org/logout?publicKey=' + publicKey, null, 'toolbar=no, width=800, height=1000, top=0, left=0')
     localStorage.removeItem(this.IdentityUsersKey)
   }
-
+  
   logoutAsync(publicKey) {
     return new Promise((resolve, reject) => {
+<<<<<<< HEAD
       this.identityWindow = window.open('https://identity.deso.org/logout?publicKey=' + publicKey, null, 'toolbar=no, width=800, height=1000, top=0, left=0')
       this.loginResolve = resolve
     })
   }
 
+=======
+      this.identityWindow = window.open('https://identity.deso.org/logout?publicKey='+publicKey, null, 'toolbar=no, width=800, height=1000, top=0, left=0')
+      this.loginResolve = resolve
+    })
+  }
+>>>>>>> 854e665 (Fixed merge issue in DesoIdentity.)
 
   signTxAsync(transactionHex) {
     return new Promise((resolve, reject) => {
