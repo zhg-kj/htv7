@@ -1,9 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { NavLink } from "react-router-dom";
+import LogoutButton from "./LogoutButton";
  
 // Display Navbar
-export default function Navbar() {
+export default function Navbar(props) {
  return (
    <div>
      <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,7 +22,9 @@ export default function Navbar() {
        >
          <span className="navbar-toggler-icon"></span>
        </button>
- 
+       
+       <LogoutButton publicKey={props.publicKey} setPublicKey={props.setPublicKey} setLoggedIn={props.setLoggedIn} />
+
        <div className="collapse navbar-collapse" id="navbarSupportedContent">
          <ul className="navbar-nav ml-auto">
            <li className="nav-item">
