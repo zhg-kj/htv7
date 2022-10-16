@@ -1,0 +1,32 @@
+.introduction{
+    text-align: center;
+    padding: 30px;
+}
+
+#bitTitle{
+    font-weight: bold;
+    margin: 30px;
+}
+#newTechIntro{
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 40px;
+}
+
+.explanation {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.patreon {
+    position: absolute;
+    right: 50px;
+    z-index: 0;
+}

@@ -10,6 +10,7 @@ class DesoIdentity {
     this.identityWindow = null
     this.loginResolve = null
     this.signTxResolve = null
+    this.jwtResolve = null
     this.IdentityUsersKey = "identityUsersV2"
     this.transactionHex = ""
 
@@ -36,22 +37,52 @@ class DesoIdentity {
   }
 
   signTxAsync(transactionHex) {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve, reject) => {
       this.signTxResolve = resolve
       this.transactionHex = transactionHex
+
       this.getInfo()
       const id = this.uuid()
-      const user = JSON.parse(localStorage.getItem(this.IdentityUsersKey))
+      const user = JSON.parse(localStorageTTL.getWithExpiry(this.IdentityUsersKey))
+      
+      console.log(user)
+      
       const payload = {
         accessLevel: user.accessLevel,
         accessLevelHmac: user.accessLevelHmac,
         encryptedSeedHex: user.encryptedSeedHex,
         transactionHex: transactionHex,
       }
-      const pm = await this.source.postMessage({
+
+      this.source.postMessage({
         id: id,
         service: 'identity',
         method: 'sign',
+        payload: payload
+      }, "*")
+    })
+  }
+
+  jwtAsync() {
+    return new Promise((resolve, reject) => {
+      this.jwtResolve = resolve
+
+      this.getInfo()
+      const id = this.uuid()
+      const user = JSON.parse(localStorageTTL.getWithExpiry(this.IdentityUsersKey))
+      
+      console.log(user)
+      
+      const payload = {
+        accessLevel: user.accessLevel,
+        accessLevelHmac: user.accessLevelHmac,
+        encryptedSeedHex: user.encryptedSeedHex,
+      }
+
+      this.source.postMessage({
+        id: id,
+        service: 'identity',
+        method: 'jwt',
         payload: payload
       }, "*")
     })
@@ -72,11 +103,11 @@ class DesoIdentity {
     console.log("getinfo")
     const id = this.uuid()
 
-      this.source.postMessage({
-        id: id,
-        service: 'identity',
-        method: 'info'
-      }, "*");
+    this.source.postMessage({
+      id: id,
+      service: 'identity',
+      method: 'info'
+    }, "*");
   }
 
   handleLogin(payload) {
@@ -95,8 +126,12 @@ class DesoIdentity {
         user['publicKey'] = payload.publicKeyAdded
       }
       localStorageTTL.setWithExpiry(this.IdentityUsersKey, JSON.stringify(user), 10000000000000);
-      this.loginResolve(user)
+      this.loginResolve(user) 
     }
+  }
+
+  handleJWT(payload) {
+    this.jwtResolve(payload['jwt'])
   }
 
   handleSign(payload) {
@@ -146,8 +181,7 @@ class DesoIdentity {
       const { data: { id: id, method: method, service: service, payload: payload } } = message;
       if (service !== "identity"){ return }
 
-
-      if (method == 'initialize') {
+      if (method === 'initialize') {
           this.handleInit(message)
       } else if ('signedTransactionHex' in payload) {
           console.log('signedTransactionHex', payload)
@@ -155,7 +189,9 @@ class DesoIdentity {
       } else if ('approvalRequired' in payload) {
           console.log('approvalRequired', payload)
           this.approveSignTx(this.transactionHex)
-      } else if (method == 'login') {
+      } else if ('jwt' in payload) {
+          this.handleJWT(payload);
+      } else if (method === 'login') {
           this.handleLogin(payload)
       }
     })

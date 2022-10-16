@@ -26,11 +26,11 @@
 }
 
 .banner {
-    position: sticky;
     width: 100%;
-    max-height: 10cm;
+    height: 50vh;
     display: flex;
     justify-content: flex-end;
+    outline: 0.2cm solid white;
 }
 
 .banner-pic {

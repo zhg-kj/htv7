@@ -1,0 +1,23 @@
+.singleContentElement{
+    border : solid 3px #1F262D;
+    max-height: 100vh;
+    max-width: 700px;
+    overflow: auto;
+    background-color: #FF4141;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+
+}
+
+.blog{
+    margin-top: 0px;
+}
+
+#Title{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    font-size: 60px;
+}

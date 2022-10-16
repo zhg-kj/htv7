@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from "react";
-import DesoIdentity from "../deso/desoIdentity";
-
 // LoginButton requires setPublicKey and setLoggedIn
 const LoginButton = (props) => {
-    const [desoIdentity, setDesoIdentity] = useState(null);
-
-    useEffect(() => {
-        const deso = new DesoIdentity();
-        setDesoIdentity(deso);
-    }, []);
-
     const login = async () => {
-        const user = await desoIdentity.loginAsync(4);
+        const user = await props.desoIdentity.loginAsync(4);
+
         props.setPublicKey(user.publicKey);
         props.setLoggedIn(true);
     }
 
     return (
-        <button onClick={login}>Login</button>
+        <img src="https://images.deso.org/c185ae975cbb9bf62e63c447c02714cb73fe9e35754b23ee23f9303034a5d7cc.webp" onClick={login} alt="login-lock"/>
     );
 };
 
