@@ -57,7 +57,7 @@ function Creator(props) {
     </div>
 
     <div>
-      {!isCoinHolder ? 
+      {isCoinHolder ? 
       <div>
         <div className='bio3'>
           <p className='bio-header'> ABOUT ME</p>
