@@ -6,9 +6,37 @@ import pic from '../assets/profile1.png';
 import banner from '../assets/banner.webp';
 import Button from '../components/btn';
 import image from '../assets/neon.webp';
+import profilePic from '../assets/profile1.png'
 
+import DesoApi from '../deso/desoAPI';
+import ViewContent from './viewContent';
+import { useEffect, useState } from 'react';
 
-function Creator() {
+function Creator(props) {
+  const [desoAPI, setDesoAPI] = useState(null);
+  const [isCoinHolder, setIsCoinHolder] = useState(false);
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    const deso = new DesoApi();
+    setDesoAPI(deso);
+    
+    setIsReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isReady) {
+      return;
+    }
+     
+    getIsHolder();
+  }, [isReady]);
+
+  const getIsHolder = async () => {
+    const data = await new DesoApi().getIsHodler(props.publicKey, props.creatorPublicKey);
+    setIsCoinHolder(data["IsHodling"])
+  }
+
   return (
   <div className='root'>  
 
@@ -77,29 +105,22 @@ function Creator() {
         My name is David Lin, a second year student at the unviersty of Toronto</h11>
     </div>
 
-    <div class='float-container2'>
-      <div class='float-child'>
-        <h7 className="t1">PREVIEW</h7>
-        <hr className='line'></hr>
-        <div className='preview'>
-            <img className="preview-img" src={image} alt="picture" />
-        </div>
-      </div>
-      <div class='float-child'>
-        <h8 className="t2">PREVIEW</h8>
-        <hr className='line'></hr>
-        <div className='preview'>
-            <img className="preview-img" src={image} alt="picture" />
-        </div>
-      </div>
-      <div class='float-child'>
-        <h9 className="t3">PREVIEW</h9>
-        <hr className='line'></hr>
-        <div className='preview'>
-            <img className="preview-img" src={image} alt="picture" />
-        </div>
-      </div>
-    </div>
+
+    {isCoinHolder && <div className='gallery'>
+  
+         <ViewContent className='onee' imageURL={profilePic} isLike={true} profileImageURL={profilePic}/>
+ 
+
+ 
+         <ViewContent className='twoo' imageURL={profilePic} isLike={true} profileImageURL={profilePic}/>
+
+
+  
+         <ViewContent className='threee' imageURL={profilePic} isLike={true} profileImageURL={profilePic}/>
+
+    
+      
+    </div>}
   </div>
   );
 }
