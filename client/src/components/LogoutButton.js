@@ -21,7 +21,7 @@ const LogoutButton = (props) => {
     }
 
     return (
-        <button onClick={logout}>Logout</button>
+      <h1 style={{fontSize: "1rem", color: "white", zIndex: "3"}} onClick={logout}>Logout</h1>
     );
 };
 
