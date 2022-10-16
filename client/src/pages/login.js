@@ -6,7 +6,7 @@ const Login = (props) => {
         <div style={{height: "100vh", display: "flex", alignItems: "center", justifyContent: "center"}}>
             <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-around"}}>
                 <LoginButton style={{margin: "auto"}} setPublicKey={props.setPublicKey} setLoggedIn={props.setLoggedIn} desoIdentity={props.desoIdentity}/>
-                <h1>CLICK TO UNLOCK</h1>
+                <h1 style={{fontSize: "5rem"}}>UNLOCK?</h1>
             </div>
         </div>
     );

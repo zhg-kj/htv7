@@ -7,8 +7,8 @@ import "./CreatedContent.css";
 const blog = {
     img : blogpost,
     creator : 'Taylor Marry',
-    bio: "My name is Taylor Merry, and please givvvvvve me big big kiss!",
-    description : "My a full time stripper working Rabel Toronto, Pay me and see more 😍😍😍!"
+    bio: "My name is Taylor Merry",
+    description : "!"
 }
 export class CreatedContent extends React.Component{
     render() {

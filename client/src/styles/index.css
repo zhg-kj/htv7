@@ -33,3 +33,7 @@ h4 {
   color: white;
 }
 
+.clickable {
+  cursor: pointer;
+}
+

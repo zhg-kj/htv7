@@ -21,7 +21,7 @@ const LogoutButton = (props) => {
     }
 
     return (
-      <h1 style={{fontSize: "1rem", color: "white", zIndex: "3"}} onClick={logout}>Logout</h1>
+      <h1 className="clickable" style={{fontSize: "1rem", color: "white", zIndex: "3"}} onClick={logout}>Logout</h1>
     );
 };
 
