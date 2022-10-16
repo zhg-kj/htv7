@@ -21,8 +21,8 @@ export default function ImageGallery(props) {
     return (
       <Link to={`/content/${post.id}`} state={{ post: post }} key={post.id}>
         <div className="post-card">
-          <img className='post-image' src={post.imageURL} alt='Post.' />
-          <h4 className='post-body'>{post.body}</h4>
+          <img className='post-image' src={post.imageURL} alt='Post' />
+          <h4 style={{color: "black", textDecoration: "none"}}className='post-body'>{post.body}</h4>
         </div>
       </Link>
     )

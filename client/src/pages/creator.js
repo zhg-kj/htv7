@@ -12,6 +12,8 @@ import DesoApi from '../deso/desoAPI';
 import ViewContent from './viewContent';
 import { useEffect, useState } from 'react';
 
+import ImageGallery from '../components/imageGallery';
+
 function Creator(props) {
   const [desoAPI, setDesoAPI] = useState(null);
   const [isCoinHolder, setIsCoinHolder] = useState(false);
@@ -106,19 +108,7 @@ function Creator(props) {
     </div>
 
 
-    {isCoinHolder && <div className='gallery'>
-  
-         <ViewContent className='onee' imageURL={profilePic} isLike={true} profileImageURL={profilePic}/>
- 
-
- 
-         <ViewContent className='twoo' imageURL={profilePic} isLike={true} profileImageURL={profilePic}/>
-
-
-  
-         <ViewContent className='threee' imageURL={profilePic} isLike={true} profileImageURL={profilePic}/>
-
-    </div>}
+    {isCoinHolder && <ImageGallery/>}
   </div>
   );
 }
