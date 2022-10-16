@@ -7,7 +7,6 @@ class Button extends React.Component{
         super(props);
         this.state = {
             label : "UNLOCK NOW",
-
         }
     }
 
