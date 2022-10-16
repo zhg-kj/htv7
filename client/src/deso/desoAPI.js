@@ -13,11 +13,30 @@ class DesoApi {
     // USERS
 
     // POSTS
-    async uploadImage (publicKey) {
+    
+    // file: File
+    // publicKey: String
+    // jwt: String
+    // response: { imageURL: String }
+    async uploadImage (file, publicKey, jwt) {
 
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("UserPublicKeyBase58Check", publicKey);
+        formData.append("JWT", jwt);
+
+        const path = "/v0/upload-image"
+
+        try{
+            const result = await this.getFormClient().post(path, formData)
+            return result.data
+        } catch (error) {
+            console.log(error)
+            return null
+        }
     }
 
-    async submitPost  (publicKey,  body, postExtraData){
+    async submitPost  (publicKey, body) {
         if(!publicKey){
             console.log("publicKey is required")
             return
@@ -109,6 +128,40 @@ class DesoApi {
         }
     }
 
+    async getIsHodler(publicKey, creatorKey) {
+        const path = "/v0/is-hodling-public-key"
+
+        const data = {
+            PublicKeyBase58Check : publicKey,
+            IsHodlingPublicKeyBase58Check : creatorKey
+        }
+
+        try{
+            const result = await this.getClient().post(path, data)
+            return result?.data
+        } catch (error) {
+            console.log(error)
+            return null
+        }
+    }
+
+    async getIsFollowing(publicKey, creatorKey) {
+        const path = "/v0/is-following-public-key"
+
+        const data = {
+            PublicKeyBase58Check : publicKey,
+            IsFollowingPublicKeyBase58Check : creatorKey
+        }
+
+        try{
+            const result = await this.getClient().post(path, data)
+            return result?.data
+        } catch (error) {
+            console.log(error)
+            return null
+        }
+    }
+
     async getSinglePost(postHash, commentLimit = 20, fetchParents = false, commentOffset= 0, addGlobalFeedBool = false) {
         if(!postHash){
             console.log("postHash is required")
@@ -181,7 +234,19 @@ class DesoApi {
             baseURL: this.baseUrl,
             headers: {
               "Content-Type": "application/json",
-              Accept: "application/json",
+              Accept: "application/json"
+            },
+          })
+          return client
+    }
+
+    getFormClient (){
+        if (client) return client
+        client = axios.create({
+            baseURL: this.baseUrl,
+            headers: {
+              "Content-Type": "multipart/form-data",
+              Accept: "multipart/form-data"
             },
           })
           return client
