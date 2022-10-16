@@ -14,7 +14,7 @@ export default class Home extends React.Component{
             <div>
                 <Title/>
                 <Introduction/>
-                <div className="content">
+                {/*<div className="content">
                     <div className="left">
                         <BlogList title="Top Creators" num={8} style={{float:"left"}}/>
                     </div>
@@ -22,7 +22,7 @@ export default class Home extends React.Component{
                         <BlogList title="Recommended for you" num={4}/>
                         <BlogList title="Most Recent" num={6}/>
                     </div>
-                </div>
+                </div>*/}
                 <SearchBar/>
                 <ImageGallery/>
             </div>
