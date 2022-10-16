@@ -33,8 +33,8 @@ function Creator(props) {
   }, [isReady]);
 
   const getIsHolder = async () => {
-    const data = await new DesoApi().getIsHodler(props.publicKey, props.creatorPublicKey);
-    setIsCoinHolder(data["IsHodling"])
+    const data = await desoAPI.getIsHodler(props.publicKey, props.creatorPublicKey);
+    setIsCoinHolder(data["BalanceEntry"]["BalanceNanos"] > 0)
   }
 
   return (
@@ -118,8 +118,6 @@ function Creator(props) {
   
          <ViewContent className='threee' imageURL={profilePic} isLike={true} profileImageURL={profilePic}/>
 
-    
-      
     </div>}
   </div>
   );

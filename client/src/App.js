@@ -63,7 +63,7 @@ const App = () => {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
             <Route path="/content/:id" element={<ViewContent />} />
-            <Route path="/creator" element={<Creator publicKey={publicKey} creatorPublicKey="BC1YLjRTtiFhTSgEXbKG7RzgiMxsNQCFytqR24rQzzhpb1adV4pUZN9"/>} />
+            <Route path="/creator" element={<Creator publicKey={publicKey} creatorPublicKey="BC1YLiFNARSWF6qtXM5acrS7q8VWPeeS2gycVBtqLALkE4c1V3kx4US"/>} />
             <Route path="/edit/:id" element={<Edit />} />
             <Route path="/create" element={<Create />} />
             <Route path="/login" element={<Login />} />
