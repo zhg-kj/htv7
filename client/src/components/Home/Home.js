@@ -9,7 +9,7 @@ import {Join} from "../Join/Join";
 import ImageGallery from '../imageGallery';
 
 export default class Home extends React.Component{
-    render(){
+    render() {
         return(
             <div>
                 <Title/>

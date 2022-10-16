@@ -17,6 +17,7 @@ import RecordList from "./components/recordList";
 // Misc
 import localStorageTTL from "./components/localStorageTTL";
 import DesoIdentity from "./deso/desoIdentity";
+
 const IdentityUsersKey = "identityUsersV2"
 
 const App = () => {
@@ -56,14 +57,14 @@ const App = () => {
         ></iframe>
         <Navbar publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey} desoIdentity={desoIdentity}/>
         <Routes>
-          <Route exact path="/testing" element={<Testing publicKey={publicKey} desoIdentity={desoIdentity}/>} />
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
-          <Route path="/content/:id" element={<ViewContent />} />
-          <Route path="/creator" element={<Creator />} />
-          <Route path="/edit/:id" element={<Edit />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/login" element={<Login />} />
+            <Route exact path="/testing" element={<Testing publicKey={publicKey} desoIdentity={desoIdentity}/>} />
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
+            <Route path="/content/:id" element={<ViewContent />} />
+            <Route path="/creator" element={<Creator />} />
+            <Route path="/edit/:id" element={<Edit />} />
+            <Route path="/create" element={<Create />} />
+            <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     );
