@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import DesoApi from "../deso/desoAPI";
 
+import ImageGallery from "../components/imageGallery";
+
 const Testing = (props) => {
   const [desoApi, setDesoApi] = useState(null);
 
@@ -29,6 +31,7 @@ const Testing = (props) => {
       <button onClick={() => submitPost()}>Submit Posts</button>
       <button onClick={() => getSingleProfile()}>Get Profile</button>
       <button onClick={() => getPostsForPublicKey()}>Get Post</button>
+      <ImageGallery />
     </div>
   );
 };
