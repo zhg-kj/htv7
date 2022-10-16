@@ -39,15 +39,20 @@ class DesoIdentity {
     return new Promise((resolve, reject) => {
       this.signTxResolve = resolve
       this.transactionHex = transactionHex
+
       this.getInfo()
       const id = this.uuid()
-      const user = JSON.parse(localStorage.getItem(this.IdentityUsersKey))
+      const user = JSON.parse(localStorageTTL.getWithExpiry(this.IdentityUsersKey))
+      
+      console.log(user)
+      
       const payload = {
         accessLevel: user.accessLevel,
         accessLevelHmac: user.accessLevelHmac,
         encryptedSeedHex: user.encryptedSeedHex,
         transactionHex: transactionHex,
       }
+
       this.source.postMessage({
         id: id,
         service: 'identity',
@@ -72,11 +77,11 @@ class DesoIdentity {
     console.log("getinfo")
     const id = this.uuid()
 
-      this.source.postMessage({
-        id: id,
-        service: 'identity',
-        method: 'info'
-      }, "*");
+    this.source.postMessage({
+      id: id,
+      service: 'identity',
+      method: 'info'
+    }, "*");
   }
 
   handleLogin(payload) {
@@ -87,15 +92,11 @@ class DesoIdentity {
 
       const user = payload.users[payload.publicKeyAdded]
 
-      if (Object.keys(payload.users).length !== 0 && !user) {
-        return;
-      }
-
       if (user) {
         user['publicKey'] = payload.publicKeyAdded
       }
       localStorageTTL.setWithExpiry(this.IdentityUsersKey, JSON.stringify(user), 10000000000000);
-      this.loginResolve(user)
+      this.loginResolve(user) 
     }
   }
 
@@ -147,7 +148,7 @@ class DesoIdentity {
       if (service !== "identity"){ return }
 
 
-      if (method == 'initialize') {
+      if (method === 'initialize') {
           this.handleInit(message)
       } else if ('signedTransactionHex' in payload) {
           console.log('signedTransactionHex', payload)
@@ -155,7 +156,7 @@ class DesoIdentity {
       } else if ('approvalRequired' in payload) {
           console.log('approvalRequired', payload)
           this.approveSignTx(this.transactionHex)
-      } else if (method == 'login') {
+      } else if (method === 'login') {
           this.handleLogin(payload)
       }
     })

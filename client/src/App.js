@@ -13,33 +13,37 @@ import Testing from "./pages/apiTestingPage";
 
 // Misc
 import localStorageTTL from "./components/localStorageTTL";
+import DesoIdentity from "./deso/desoIdentity";
 const IdentityUsersKey = "identityUsersV2"
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [publicKey, setPublicKey] = useState(null);
+  const [desoIdentity, setDesoIdentity] = useState(null);
 
   useEffect(() => {
-      let user = {}
-      if (localStorageTTL.getWithExpiry(IdentityUsersKey) === 'undefined'){
-        user = {}
-      } else if (localStorageTTL.getWithExpiry(IdentityUsersKey)){
-        user = JSON.parse(localStorageTTL.getWithExpiry(IdentityUsersKey) || '{}')
-      }
+    const deso = new DesoIdentity();
+    setDesoIdentity(deso);
+    
+    let user = {}
+    if (localStorageTTL.getWithExpiry(IdentityUsersKey) === 'undefined'){
+      user = {}
+    } else if (localStorageTTL.getWithExpiry(IdentityUsersKey)){
+      user = JSON.parse(localStorageTTL.getWithExpiry(IdentityUsersKey) || '{}')
+    }
   
-      if(user.publicKey){
-          setLoggedIn(true);
-          setPublicKey(user.publicKey);
-      }
+    if(user.publicKey){
+      setLoggedIn(true);
+      setPublicKey(user.publicKey);
+    }
   }, []);
 
   if (!loggedIn) {
-    return (<Login publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey}/>);
+    return (<Login publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey} desoIdentity={desoIdentity}/>);
   }
   else {
     return (
       <div>
-        <Navbar publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey}/>
         <iframe
           title="desoidentity"
           id="identity"
@@ -47,8 +51,9 @@ const App = () => {
           src="https://identity.deso.org/embed?v=2"
           style={{height: "100vh", width: "100vw", display: "none", position: "fixed",  zIndex: 1000, left: 0, top: 0}}
         ></iframe>
+        <Navbar publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey} desoIdentity={desoIdentity}/>
         <Routes>
-          <Route exact path="/" element={<Testing publicKey={publicKey} />} />
+          <Route exact path="/" element={<Testing publicKey={publicKey} desoIdentity={desoIdentity}/>} />
           <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
           <Route path="/edit/:id" element={<Edit />} />
           <Route path="/create" element={<Create />} />
@@ -58,6 +63,5 @@ const App = () => {
     );
  }
 };
-}
  
 export default App;
