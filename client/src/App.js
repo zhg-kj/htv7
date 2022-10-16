@@ -56,8 +56,8 @@ const App = () => {
         ></iframe>
         <Navbar publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey} desoIdentity={desoIdentity}/>
         <Routes>
-          <Route exact path="/" element={<Testing publicKey={publicKey} desoIdentity={desoIdentity}/>} />
-          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/testing" element={<Testing publicKey={publicKey} desoIdentity={desoIdentity}/>} />
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
           <Route path="/content/:id" element={<ViewContent />} />
           <Route path="/creator" element={<Creator />} />
