@@ -1,0 +1,29 @@
+#searchBtn{
+    border-radius: 25px;
+    margin-left: 20px;
+    background-color: #FF4141;
+    height: 50px;
+    width: 100px;
+}
+
+
+.searchField{
+    margin: auto;
+    width: 50%;
+}
+
+#searchHead{
+    font-family: monospace;
+    font-size: 40px;
+    font-weight:bold;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+
+input{
+    border-radius: 25px;
+    height: 50px;
+    width: 600px;
+}

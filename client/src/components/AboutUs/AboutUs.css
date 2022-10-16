@@ -1,0 +1,24 @@
+.usingTech{
+    max-width: 50vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.usingTech img{
+    align-self: center;
+    height: 300px;
+    max-width: 50%;
+}
+
+.usingTech h1{
+    font-family: "Arial Black";
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.usingTech p{
+    padding-left: 130px;
+    padding-right: 130px;
+    display: flex;
+    width: 100%;
+}

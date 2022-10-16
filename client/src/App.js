@@ -4,14 +4,14 @@ import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
  
 // We import all the components we need in our app
-import Navbar from "./components/navbar";
-import RecordList from "./components/recordList";
+import Navbar from "./components/navbar/navbar";
 import Edit from "./components/edit";
 import Create from "./components/create";
 import Login from "./pages/login";
 import Testing from "./pages/apiTestingPage";
 import Creator from"./pages/creator";
 import ViewContent from "./pages/viewContent";
+import {Home} from "./components/Home/Home";
 
 // Misc
 import localStorageTTL from "./components/localStorageTTL";

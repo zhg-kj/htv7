@@ -1,0 +1,15 @@
+.introduction{
+    text-align: center;
+}
+
+#bitTitle{
+    font-weight: bold;
+    margin: 30px;
+}
+#newTechIntro{
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 40px;
+}
