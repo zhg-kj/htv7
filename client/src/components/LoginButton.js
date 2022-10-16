@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Lock from "../assets/lock.gif"
 // LoginButton requires setPublicKey and setLoggedIn
 const LoginButton = (props) => {
     const login = async () => {
@@ -9,7 +10,7 @@ const LoginButton = (props) => {
     }
 
     return (
-        <img src="https://images.deso.org/c185ae975cbb9bf62e63c447c02714cb73fe9e35754b23ee23f9303034a5d7cc.webp" onClick={login} alt="login-lock"/>
+        <img className="clickable" style={{width: "250px"}} src={Lock} onClick={login} alt="login-lock"/>
     );
 };
 
