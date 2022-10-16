@@ -14,6 +14,9 @@ export default function Navbar(props) {
         </NavLink>
       </div>
       <div className="navright">
+        <NavLink className="navbar-brand" to="/profile">
+          <h1 style={{fontSize: "1rem", color: "white", marginRight: "20px"}}>PROFILE</h1>
+        </NavLink>
         <LogoutButton publicKey={props.publicKey} setPublicKey={props.setPublicKey} setLoggedIn={props.setLoggedIn} desoIdentity={props.desoIdentity}/>
       </div>
    </div>

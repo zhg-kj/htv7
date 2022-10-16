@@ -5,29 +5,26 @@ import '../styles/profile.css'
 
 import pic from '../assets/profile1.png';
 import banner from '../assets/a.jpeg';
-import Button from '../components/btn';
-import Input from '../components/nameform';
-import image from '../assets/neon.webp';
-
-
-
-
-
 
 function handleClick(){
-    console.log('Hello World');
+  console.log('Hello World');
 }
 
 function Profile() {
   return (
-  <div className='root-p'>  
+  <div className='root-container'>  
 
-    <div className='banner-p'>
-      <img className="banner-pic" src={banner} alt="picture" />
+    <div className='profile-container'>
+      <div style={{width: "50%", display: "flex", textAlign: "left", alignItems: "flex-end", justifyContent: "flex-start"}}>
+        <h1 style={{color: 'white', fontSize: "10rem"}}>ALLEN XU</h1>
+      </div>
+      <div className='right'>
+        
+      </div>
     </div>
 
 
-    <img className="main-profile pic1-p" src={pic} alt="picture" />
+    <img className="main-profile pic1" src={pic} alt="picture" />
 
     <div className="name2-p">
 

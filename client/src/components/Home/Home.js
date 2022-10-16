@@ -5,7 +5,7 @@ import {Title} from "../Title/Title";
 import {BlogList} from "../BlogList/BlogList";
 import {SearchBar} from "../SearchBar/SearchBar";
 import {Introduction} from "../Introduction/Introduction";
-import {Join} from "../Join/Join";
+//import {Join} from "../Join/Join";
 import ImageGallery from '../imageGallery';
 
 export default class Home extends React.Component{

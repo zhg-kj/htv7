@@ -1,7 +1,13 @@
-
+.profile-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-image: url('../assets/homebg.jpeg');
+    background-size: contain;
+}
 
 .root-p { 
-    background-image: url(https://media.istockphoto.com/photos/hexagonal-structure-futuristic-white-background-picture-id923062992?k=20&m=923062992&s=170667a&w=0&h=P1mJK7GgE3q7J_w0l1tZmw0jIJ0Om65VZxrHMyRsNso=);
     display: flex;
     flex-direction: column;
     height: 180vh;
