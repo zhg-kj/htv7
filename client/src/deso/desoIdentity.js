@@ -117,7 +117,7 @@ class DesoIdentity {
       this.identityWindow = null;
 
       const user = payload.users[payload.publicKeyAdded]
-      
+
       if (Object.keys(payload.users).length !== 0 && !user) {
         return;
       }
@@ -180,7 +180,6 @@ class DesoIdentity {
 
       const { data: { id: id, method: method, service: service, payload: payload } } = message;
       if (service !== "identity"){ return }
-
 
       if (method === 'initialize') {
           this.handleInit(message)

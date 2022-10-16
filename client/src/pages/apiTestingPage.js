@@ -24,12 +24,23 @@ const Testing = (props) => {
   }
 
   const getSingleProfile = async () => {
-    const data = await desoApi.getSingleProfile(props.publicKey)
+    const data = await desoApi.getSingleProfile("BC1YLjRTtiFhTSgEXbKG7RzgiMxsNQCFytqR24rQzzhpb1adV4pUZN9")
     console.log(data)
+  }
+
+  const checkUserHoldCreatorCoin = async (userPublicKey, creatorPublicKey) => {
+   const result =  await desoApi.getIsHodler(userPublicKey, creatorPublicKey)
+
+   console.log(result)
   }
 
   const getPostsForPublicKey = async () => {
     const data = await desoApi.getPostsForPublicKey(props.publicKey)
+    console.log(data)
+  }
+
+  const getIsFollower = async (userPublicKey, creatorPublicKey) => {
+    const data = await desoApi.getIsFollowing(userPublicKey, creatorPublicKey)
     console.log(data)
   }
 
@@ -49,9 +60,10 @@ const Testing = (props) => {
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{ height: "1000px", marginTop: "100px", display: "flex", flexDirection: "column"}}>
       <input type="file" onChange={handleChange}/>
       <button type="submit" onClick={handleSubmit}>Upload</button>
+      <button onClick={(e) => getSingleProfile(props.publicKey)}>Get Profile</button>
   </div>
   );
 };

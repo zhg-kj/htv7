@@ -13,6 +13,11 @@ class DesoApi {
     // USERS
 
     // POSTS
+    
+    // file: File
+    // publicKey: String
+    // jwt: String
+    // response: { imageURL: String }
     async uploadImage (file, publicKey, jwt) {
 
         const formData = new FormData();
@@ -31,7 +36,7 @@ class DesoApi {
         }
     }
 
-    async submitPost  (publicKey,  body, postExtraData){
+    async submitPost  (publicKey, body) {
         if(!publicKey){
             console.log("publicKey is required")
             return
@@ -114,6 +119,40 @@ class DesoApi {
             Username : username
         }
         
+        try{
+            const result = await this.getClient().post(path, data)
+            return result?.data
+        } catch (error) {
+            console.log(error)
+            return null
+        }
+    }
+
+    async getIsHodler(publicKey, creatorKey) {
+        const path = "/v0/is-hodling-public-key"
+
+        const data = {
+            PublicKeyBase58Check : publicKey,
+            IsHodlingPublicKeyBase58Check : creatorKey
+        }
+
+        try{
+            const result = await this.getClient().post(path, data)
+            return result?.data
+        } catch (error) {
+            console.log(error)
+            return null
+        }
+    }
+
+    async getIsFollowing(publicKey, creatorKey) {
+        const path = "/v0/is-following-public-key"
+
+        const data = {
+            PublicKeyBase58Check : publicKey,
+            IsFollowingPublicKeyBase58Check : creatorKey
+        }
+
         try{
             const result = await this.getClient().post(path, data)
             return result?.data

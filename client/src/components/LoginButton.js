@@ -9,7 +9,7 @@ const LoginButton = (props) => {
     }
 
     return (
-        <button onClick={login}>Login</button>
+        <img src="https://images.deso.org/c185ae975cbb9bf62e63c447c02714cb73fe9e35754b23ee23f9303034a5d7cc.webp" onClick={login} alt="login-lock"/>
     );
 };
 
