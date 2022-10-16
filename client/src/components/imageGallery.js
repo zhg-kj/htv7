@@ -4,7 +4,10 @@ import '../styles/imageGallery.css';
 
 const test = [{id: 1, body: "Test1", imageURL: "https://www.cyberpunk.net/build/images/home3/screen-image-city-209a8285.jpg"},
               {id: 2, body: "Test2", imageURL: "https://www.cyberpunk.net/build/images/home3/screen-image-city-209a8285.jpg"},
-              {id: 3, body: "Test3", imageURL: "https://www.cyberpunk.net/build/images/home3/screen-image-city-209a8285.jpg"}]
+              {id: 3, body: "Test3", imageURL: "https://www.cyberpunk.net/build/images/home3/screen-image-city-209a8285.jpg"},
+              {id: 4, body: "Test4", imageURL: "https://www.cyberpunk.net/build/images/home3/screen-image-city-209a8285.jpg"},
+              {id: 5, body: "Test5", imageURL: "https://www.cyberpunk.net/build/images/home3/screen-image-city-209a8285.jpg"},
+              {id: 6, body: "Test6", imageURL: "https://www.cyberpunk.net/build/images/home3/screen-image-city-209a8285.jpg"}]
 
 export default function ImageGallery(props) {
 

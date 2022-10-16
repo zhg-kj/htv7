@@ -1,8 +1,22 @@
-#loginButton{
-    background-color: #FF5833;
-    border-radius: 20%;
-    float: right;
+.navigationBar{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-.navigationBar{
+.navleft {
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.navright {
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
