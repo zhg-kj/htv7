@@ -117,6 +117,10 @@ class DesoIdentity {
       this.identityWindow = null;
 
       const user = payload.users[payload.publicKeyAdded]
+      
+      if (Object.keys(payload.users).length !== 0 && !user) {
+        return;
+      }
 
       if (user) {
         user['publicKey'] = payload.publicKeyAdded
