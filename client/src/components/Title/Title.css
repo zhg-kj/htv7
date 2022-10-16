@@ -11,10 +11,7 @@
     justify-content: center;
     align-self: center;
     align-items: center;
-
-
 }
-
 
 .intro{
     background-image: url("../../assets/homebg.jpeg");
@@ -24,9 +21,16 @@
     background-size: cover;
     background-position: bottom center;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
+    text-align: left;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 30px;
 }
-h1{
-    font-size: 90px;
+
+h1 {
+    font-size: 7rem;
+}
+
+h2 {
+    font-size: 4rem;
 }

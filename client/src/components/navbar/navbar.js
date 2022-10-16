@@ -8,55 +8,17 @@ import './navbar.css';
 export default function Navbar(props) {
  return (
    <div className="navigationBar">
-     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-       <NavLink className="navbar-brand" to="/">
-        Home
-       </NavLink>
-       <button
-         className="navbar-toggler"
-         type="button"
-         data-toggle="collapse"
-         data-target="#navbarSupportedContent"
-         aria-controls="navbarSupportedContent"
-         aria-expanded="false"
-         aria-label="Toggle navigation"
-       >
-         <span className="navbar-toggler-icon"></span>
-       </button>
-       
-       <LogoutButton publicKey={props.publicKey} setPublicKey={props.setPublicKey} setLoggedIn={props.setLoggedIn} desoIdentity={props.desoIdentity}/>
-
-       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/create">
-                Create Record
-              </NavLink>
-            </li>
-            <li className="nav-item">
-                 <NavLink className="nav-link" to="/price">
-                     Price
-                 </NavLink>
-             </li>
-             <li className="nav-item">
-                 <NavLink className="nav-link" to="/product">
-                     Product
-                 </NavLink>
-             </li>
-         </ul>
-           <button type='button' id='loginButton'>Login</button>
-       </div>
-
-       <div className="creator button" id="navbarSupportedContent">
-         <ul className="navbar-nav ml-auto">
-           <li className="nav-item">
-             <NavLink className="nav-link" to="pages/creator">
-               Logout
-             </NavLink>
-           </li>
-         </ul>
-       </div>
-     </nav>
+      <div className="navleft">
+        <NavLink className="navbar-brand" to="/">
+          <h1 style={{fontSize: "1rem", color: "white"}}>HOME</h1>
+        </NavLink>
+      </div>
+      <div className="navright">
+        <NavLink className="navbar-brand" to="/profile">
+          <h1 style={{fontSize: "1rem", color: "white", marginRight: "20px"}}>PROFILE</h1>
+        </NavLink>
+        <LogoutButton publicKey={props.publicKey} setPublicKey={props.setPublicKey} setLoggedIn={props.setLoggedIn} desoIdentity={props.desoIdentity}/>
+      </div>
    </div>
  );
 }

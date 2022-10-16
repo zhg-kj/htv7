@@ -10,6 +10,7 @@ import Create from "./components/create/create";
 import Login from "./pages/login";
 import Testing from "./pages/apiTestingPage";
 import Creator from"./pages/creator";
+import Profile from "./pages/profile";
 import ViewContent from "./pages/viewContent";
 import Home from "./components/Home/Home";
 import RecordList from "./components/recordList";
@@ -17,6 +18,7 @@ import RecordList from "./components/recordList";
 // Misc
 import localStorageTTL from "./components/localStorageTTL";
 import DesoIdentity from "./deso/desoIdentity";
+
 const IdentityUsersKey = "identityUsersV2"
 
 const App = () => {
@@ -56,14 +58,15 @@ const App = () => {
         ></iframe>
         <Navbar publicKey={publicKey} setLoggedIn={setLoggedIn} setPublicKey={setPublicKey} desoIdentity={desoIdentity}/>
         <Routes>
-          <Route exact path="/" element={<Testing publicKey={publicKey} desoIdentity={desoIdentity}/>} />
-          <Route exact path="/home" element={<Home />} />
-          <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
-          <Route path="/content/:id" element={<ViewContent />} />
-          <Route path="/creator" element={<Creator />} />
-          <Route path="/edit/:id" element={<Edit />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/login" element={<Login />} />
+            <Route exact path="/testing" element={<Testing publicKey={publicKey} desoIdentity={desoIdentity}/>} />
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
+            <Route path="/content/:id" element={<ViewContent />} />
+            <Route path="/creator" element={<Creator />} />
+            <Route path="/edit/:id" element={<Edit />} />
+            <Route path="/create" element={<Create />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     );

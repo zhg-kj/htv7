@@ -5,14 +5,14 @@ import {Title} from "../Title/Title";
 import {BlogList} from "../BlogList/BlogList";
 import {SearchBar} from "../SearchBar/SearchBar";
 import {Introduction} from "../Introduction/Introduction";
-import {Join} from "../Join/Join";
+//import {Join} from "../Join/Join";
+import ImageGallery from '../imageGallery';
 
 export default class Home extends React.Component{
-    render(){
+    render() {
         return(
             <div>
                 <Title/>
-                <SearchBar/>
                 <Introduction/>
                 <div className="content">
                     <div className="left">
@@ -23,7 +23,8 @@ export default class Home extends React.Component{
                         <BlogList title="Most Recent" num={6}/>
                     </div>
                 </div>
-                <Join/>
+                <SearchBar/>
+                <ImageGallery/>
             </div>
         );
     }
