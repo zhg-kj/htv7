@@ -1,0 +1,19 @@
+#getStarted{
+    text-align: center;
+}
+#getStarted h1{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Arial Black";
+}
+
+
+#getStarted button{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    height: 40px;
+    width: 100px;
+    border-radius: 30%;
+    background-color: #FF4141;
+    color: mintcream;
+}

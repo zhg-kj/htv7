@@ -1,12 +1,13 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { NavLink } from "react-router-dom";
-import LogoutButton from "./LogoutButton";
+import LogoutButton from "../LogoutButton";
+import './navbar.css';
  
 // Display Navbar
 export default function Navbar(props) {
  return (
-   <div>
+   <div className="navigationBar">
      <nav className="navbar navbar-expand-lg navbar-light bg-light">
        <NavLink className="navbar-brand" to="/">
         Home
@@ -27,15 +28,23 @@ export default function Navbar(props) {
 
        <div className="collapse navbar-collapse" id="navbarSupportedContent">
          <ul className="navbar-nav ml-auto">
-           <li className="nav-item">
-             <NavLink className="nav-link" to="/create">
-               Create Record
-             </NavLink>
-
-
-
-           </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/create">
+                Create Record
+              </NavLink>
+            </li>
+            <li className="nav-item">
+                 <NavLink className="nav-link" to="/price">
+                     Price
+                 </NavLink>
+             </li>
+             <li className="nav-item">
+                 <NavLink className="nav-link" to="/product">
+                     Product
+                 </NavLink>
+             </li>
          </ul>
+           <button type='button' id='loginButton'>Login</button>
        </div>
 
        <div className="creator button" id="navbarSupportedContent">
@@ -47,14 +56,7 @@ export default function Navbar(props) {
            </li>
          </ul>
        </div>
-
-
-
-
-
-
      </nav>
-     
    </div>
  );
 }
