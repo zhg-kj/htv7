@@ -10,6 +10,7 @@ class DesoIdentity {
     this.identityWindow = null
     this.loginResolve = null
     this.signTxResolve = null
+    this.jwtResolve = null
     this.IdentityUsersKey = "identityUsersV2"
     this.transactionHex = ""
 
@@ -62,6 +63,31 @@ class DesoIdentity {
     })
   }
 
+  jwtAsync() {
+    return new Promise((resolve, reject) => {
+      this.jwtResolve = resolve
+
+      this.getInfo()
+      const id = this.uuid()
+      const user = JSON.parse(localStorageTTL.getWithExpiry(this.IdentityUsersKey))
+      
+      console.log(user)
+      
+      const payload = {
+        accessLevel: user.accessLevel,
+        accessLevelHmac: user.accessLevelHmac,
+        encryptedSeedHex: user.encryptedSeedHex,
+      }
+
+      this.source.postMessage({
+        id: id,
+        service: 'identity',
+        method: 'jwt',
+        payload: payload
+      }, "*")
+    })
+  }
+
   approveSignTx(transactionHex) {
     this.identityWindow = window.open('https://identity.deso.org/approve?tx=' + transactionHex, null, 'toolbar=no, width=800, height=1000, top=0, left=0')
   }
@@ -92,12 +118,20 @@ class DesoIdentity {
 
       const user = payload.users[payload.publicKeyAdded]
 
+      if (Object.keys(payload.users).length !== 0 && !user) {
+        return;
+      }
+
       if (user) {
         user['publicKey'] = payload.publicKeyAdded
       }
       localStorageTTL.setWithExpiry(this.IdentityUsersKey, JSON.stringify(user), 10000000000000);
       this.loginResolve(user) 
     }
+  }
+
+  handleJWT(payload) {
+    this.jwtResolve(payload['jwt'])
   }
 
   handleSign(payload) {
@@ -147,7 +181,6 @@ class DesoIdentity {
       const { data: { id: id, method: method, service: service, payload: payload } } = message;
       if (service !== "identity"){ return }
 
-
       if (method === 'initialize') {
           this.handleInit(message)
       } else if ('signedTransactionHex' in payload) {
@@ -156,6 +189,8 @@ class DesoIdentity {
       } else if ('approvalRequired' in payload) {
           console.log('approvalRequired', payload)
           this.approveSignTx(this.transactionHex)
+      } else if ('jwt' in payload) {
+          this.handleJWT(payload);
       } else if (method === 'login') {
           this.handleLogin(payload)
       }
