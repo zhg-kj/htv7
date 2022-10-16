@@ -4,10 +4,13 @@ import '../styles/preview.css'
 import '../styles/profile.css'
 
 import pic from '../assets/profile1.png';
-import banner from '../assets/neon.jpeg';
+import banner from '../assets/a.jpeg';
 import Button from '../components/btn';
 import Input from '../components/nameform';
 import image from '../assets/neon.webp';
+
+
+
 
 
 
@@ -99,29 +102,29 @@ function Profile() {
   
 
         <div class='float-child'>
-            <h7 className="t1">COIN A</h7>
+            <h7 className="t1">POST 1</h7>
             <hr className='line'></hr>
-            <h7 className="t1">25 COINS</h7>
+            <h7 className="t1">DATE 1</h7>
             <hr className='line'></hr>
-            <h11 className='t1'>~ $28.80</h11>
-            <hr className='line'></hr>
-        </div>
-
-        <div class='float-child'>
-            <h8 className="t2">COIN B</h8>
-            <hr className='line'></hr>
-            <h8 className="t2">50 COINS</h8>
-            <hr className='line'></hr>
-            <h11 className='t2'>~ $57.60</h11>
+            
             <hr className='line'></hr>
         </div>
 
         <div class='float-child'>
-            <h9 className="t3">COIN C</h9>
+            <h8 className="t2">POST 2</h8>
             <hr className='line'></hr>
-            <h9 className="t1">100 COINS</h9>
+            <h8 className="t2">DATE 2</h8>
             <hr className='line'></hr>
-            <h11 className='t3'>~ $105.20</h11>
+            
+            <hr className='line'></hr>
+        </div>
+
+        <div class='float-child'>
+            <h9 className="t3">POST 3</h9>
+            <hr className='line'></hr>
+            <h9 className="t1">DATE 3</h9>
+            <hr className='line'></hr>
+            
             <hr className='line'></hr>
         </div>
 

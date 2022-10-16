@@ -1,10 +1,10 @@
 
 
 .root-p { 
-    background-color: lightblue;
-    height: 200vh;
+    background-image: url(https://media.istockphoto.com/photos/hexagonal-structure-futuristic-white-background-picture-id923062992?k=20&m=923062992&s=170667a&w=0&h=P1mJK7GgE3q7J_w0l1tZmw0jIJ0Om65VZxrHMyRsNso=);
     display: flex;
     flex-direction: column;
+    height: 180vh;
 }
 
 .title-p {
@@ -28,6 +28,8 @@
 
 .banner-p{
     position: sticky;
+
+    background-image: url(https://thumbs.gfycat.com/AlarmingUnselfishKangaroo-size_restricted.gif);
     width: 100%;
     max-height: 10cm;
     display: flex;
@@ -50,7 +52,7 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    
+
     top: 550px;
     width: 100%;
 
@@ -176,11 +178,11 @@ line-p {
 }
 
 .greeting h4{
-    font-size: 2em;
+    font-size: 4em;
 
 }
 
-.greeting h5{
-    font-size:0.5em;
+.user h5{
+    font-size:2em;
 
 } 
