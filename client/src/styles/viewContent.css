@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('../assets/homebg.jpeg');
+    background-size: contain;
 }
 
 .userPost{
@@ -12,6 +14,7 @@
     flex-direction: column;
     width: 33%;
     max-height: 90%;
+    background-color: white;
 }
 .userHeader img{
     width: 40px;
