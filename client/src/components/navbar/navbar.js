@@ -14,6 +14,9 @@ export default function Navbar(props) {
         </NavLink>
       </div>
       <div className="navright">
+        <NavLink className="navbar-brand" to="/search">
+          <h1 style={{fontSize: "1rem", color: "white", marginRight: "20px"}}>SEARCH</h1>
+        </NavLink>
         <NavLink className="navbar-brand" to="/profile">
           <h1 style={{fontSize: "1rem", color: "white", marginRight: "20px"}}>PROFILE</h1>
         </NavLink>
