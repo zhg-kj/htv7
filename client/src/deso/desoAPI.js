@@ -13,8 +13,22 @@ class DesoApi {
     // USERS
 
     // POSTS
-    async uploadImage (publicKey) {
+    async uploadImage (file, publicKey, jwt) {
 
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("UserPublicKeyBase58Check", publicKey);
+        formData.append("JWT", jwt);
+
+        const path = "/v0/upload-image"
+
+        try{
+            const result = await this.getFormClient().post(path, formData)
+            return result.data
+        } catch (error) {
+            console.log(error)
+            return null
+        }
     }
 
     async submitPost  (publicKey,  body, postExtraData){
@@ -181,7 +195,19 @@ class DesoApi {
             baseURL: this.baseUrl,
             headers: {
               "Content-Type": "application/json",
-              Accept: "application/json",
+              Accept: "application/json"
+            },
+          })
+          return client
+    }
+
+    getFormClient (){
+        if (client) return client
+        client = axios.create({
+            baseURL: this.baseUrl,
+            headers: {
+              "Content-Type": "multipart/form-data",
+              Accept: "multipart/form-data"
             },
           })
           return client

@@ -5,6 +5,7 @@ import ImageGallery from "../components/imageGallery";
 
 const Testing = (props) => {
   const [desoApi, setDesoApi] = useState(null);
+  const [file, setFile] = useState()
 
   useEffect(() => {
 
@@ -32,13 +33,26 @@ const Testing = (props) => {
     console.log(data)
   }
 
+  const getJWT = async () => {
+    const jwt = await props.desoIdentity.jwtAsync();
+  }
+
+  function handleChange(event) {
+    setFile(event.target.files[0])
+  }
+  
+  async function handleSubmit(e) {
+    const jwt = await props.desoIdentity.jwtAsync();
+    const jwtToken = jwt
+    const result = await desoApi.uploadImage(file, props.publicKey, jwtToken);
+    alert(result)
+  }
+
   return (
-    <div>
-      <button onClick={submitPost}>Submit Posts</button>
-      <button onClick={() => getSingleProfile()}>Get Profile</button>
-      <button onClick={() => getPostsForPublicKey()}>Get Post</button>
-      <ImageGallery />
-    </div>
+    <div className="App">
+      <input type="file" onChange={handleChange}/>
+      <button type="submit" onClick={handleSubmit}>Upload</button>
+  </div>
   );
 };
  
