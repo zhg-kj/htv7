@@ -125,7 +125,8 @@ class DesoIdentity {
       if (user) {
         user['publicKey'] = payload.publicKeyAdded
       }
-      localStorageTTL.setWithExpiry(this.IdentityUsersKey, JSON.stringify(user), 10000000000000);
+
+      localStorageTTL.setWithExpiry(this.IdentityUsersKey, JSON.stringify(user), 36000);
       this.loginResolve(user) 
     }
   }

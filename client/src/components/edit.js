@@ -24,6 +24,7 @@ export default function Edit() {
  
      const record = await response.json();
      if (!record) {
+
        window.alert(`Record with id ${id} not found`);
        navigate("/");
        return;

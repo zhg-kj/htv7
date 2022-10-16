@@ -52,6 +52,7 @@
 
 .sub{
     font-size: 2em;
+
 }
 
 .bio2 {
@@ -73,5 +74,18 @@
     
     left: -2cm;
 }
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    margin-top: 24cm;
+    justify-content: space-around;
+
+
+}
+
+
+
+
 
 
