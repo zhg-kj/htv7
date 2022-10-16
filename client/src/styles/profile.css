@@ -1,0 +1,188 @@
+
+
+.root-p { 
+    background-image: url(https://media.istockphoto.com/photos/hexagonal-structure-futuristic-white-background-picture-id923062992?k=20&m=923062992&s=170667a&w=0&h=P1mJK7GgE3q7J_w0l1tZmw0jIJ0Om65VZxrHMyRsNso=);
+    display: flex;
+    flex-direction: column;
+    height: 180vh;
+}
+
+.title-p {
+    color: lightslategray;
+    font-size: 50px;
+    
+}
+
+.pic1-p {
+    position: absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    top: 300px;
+    width: 15em;
+    height: 15em;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-p{
+    position: sticky;
+
+    background-image: url(https://thumbs.gfycat.com/AlarmingUnselfishKangaroo-size_restricted.gif);
+    width: 100%;
+    max-height: 10cm;
+    display: flex;
+    justify-content: flex-end;
+    outline: 0.5cm solid black;
+}
+
+    
+
+
+
+.name2-p {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-size: x-large;
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+    top: 550px;
+    width: 100%;
+
+    padding-top: 40px;
+    height: 300px;
+
+}
+
+.sub-p {
+    color: lightslategray;
+    font-size: 4em;
+}
+
+.sub-p-1 {
+    color: lightslategray;
+    font-size: 1em;
+}
+
+.greeting {
+    size: 10em;
+
+}
+
+.user {
+    font-size: small;
+} 
+
+
+line-p {
+    color: black;
+}
+
+.wallet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+}
+
+.float-container-p{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    padding: 20px;
+    top: 430px;
+    background-color: black;
+
+   
+}
+
+.float-container-p-2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    padding: 20px;
+    top: 430px;
+    background-color: black;
+
+    margin-top: 1cm;
+
+   
+}
+
+.bio {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 2000em;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+
+}
+ 
+.b1 {
+    width: 33%;
+}
+
+.b2 {
+    width: 33%;
+}
+
+.b3 {
+    width: 33%;
+}
+
+.t1-p{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+
+    font-size: 0.75em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:white;
+}
+
+.t2- {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+
+    font-size: 0.75em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:white;
+}
+
+.t3-p {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+
+    font-size: 0.75em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:white;
+}
+
+.Buttons button{
+    margin: 10px;
+}
+
+.greeting h4{
+    font-size: 4em;
+
+}
+
+.user h5{
+    font-size:2em;
+
+} 

@@ -10,6 +10,7 @@ import Create from "./components/create/create";
 import Login from "./pages/login";
 import Testing from "./pages/apiTestingPage";
 import Creator from"./pages/creator";
+import Profile from "./pages/profile";
 import ViewContent from "./pages/viewContent";
 import Home from "./components/Home/Home";
 import RecordList from "./components/recordList";
@@ -65,6 +66,7 @@ const App = () => {
             <Route path="/edit/:id" element={<Edit />} />
             <Route path="/create" element={<Create />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     );
