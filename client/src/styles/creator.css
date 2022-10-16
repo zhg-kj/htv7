@@ -31,6 +31,7 @@
     max-height: 10cm;
     display: flex;
     justify-content: flex-end;
+    outline: 0.2cm solid white;
 }
 
 .banner-pic {

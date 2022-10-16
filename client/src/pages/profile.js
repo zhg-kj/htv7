@@ -4,104 +4,136 @@ import '../styles/preview.css'
 import '../styles/profile.css'
 
 import pic from '../assets/profile1.png';
-import banner from '../assets/banner.webp';
+import banner from '../assets/neon.jpeg';
 import Button from '../components/btn';
 import Input from '../components/nameform';
 import image from '../assets/neon.webp';
 
 
+
+function handleClick(){
+    console.log('Hello World');
+}
+
 function Profile() {
   return (
-  <div className='root'>  
+  <div className='root-p'>  
 
-    <div className='banner'>
+    <div className='banner-p'>
       <img className="banner-pic" src={banner} alt="picture" />
     </div>
 
-    <div className="pic1">
-      <img className="main-profile" src={pic} alt="picture" />
+
+    <img className="main-profile pic1-p" src={pic} alt="picture" />
+
+    <div className="name2-p">
+
+        <div className="greeting">
+            <h4 className="title-p">HELLO, ALLEN </h4>
+        </div>
+
+        <div className='user'>
+            <h5 className="title-p">@allenxxy</h5>
+        </div>
+
+    
+      <hr style={{color:"black"}}/>
+
+      <h5 className="bio">112 FOLLOWERS   90 FOLLOWING   0 POSTS</h5>
+      <hr style={{color:"black", marginBottom:"0px"}}/>
+
+      <div className="Buttons">
+
+        
+        <button className='post-button' >NEW POST</button>
+        
+
+        <button className='buy-button' >BUY</button>
+        
+        <button className='sell-button' onClick={handleClick}>SELL</button>
+      </div>
+      
+      <hr className='line-p'></hr>
     </div>
 
-    <div className="name2">
-      <h4 className="title">David Lin</h4>
-      <h5 className="bio">Hi, my name is David Lin  </h5>
-      <hr></hr>
-      <h6 className="sub">Choose a Membership Level!</h6>
-    </div>
+    <div class='float-container-p'>
 
-    <div class='float-container'>
+      <div className='wallet'>
+        <h6 className="sub-p">YOUR WALLET</h6>
+        <h7 className="sub-p-1"> DISPLAYING YOUR TOP THREE COINS</h7>
+        <hr style={{color:"black"}}/>
+        <button className='more-crypto-button' >MORE</button>
+      </div>
+        
+
       <div class='float-child'>
-        <h7 className="t1">TIER 1</h7>
+        <h7 className="t1">COIN A</h7>
         <hr className='line'></hr>
         <h7 className="t1">25 COINS</h7>
         <hr className='line'></hr>
-        <h11 className='t1'>About this Tier</h11>
+        <h11 className='t1'>~ $28.80</h11>
         <hr className='line'></hr>
-        <div className=' button'>
-          <Button />
-        </div>
       </div>
 
       <div class='float-child'>
-        <h8 className="t2">TIER 2</h8>
+        <h8 className="t2">COIN B</h8>
         <hr className='line'></hr>
         <h8 className="t2">50 COINS</h8>
         <hr className='line'></hr>
-        <h11 className='t2'>About this Tier</h11>
+        <h11 className='t2'>~ $57.60</h11>
         <hr className='line'></hr>
-        <div className=' button'>
-          <Button />
-        </div>
       </div>
       
       <div class='float-child'>
-        <h9 className="t3">TIER 3</h9>
+        <h9 className="t3">COIN C</h9>
         <hr className='line'></hr>
         <h9 className="t1">100 COINS</h9>
         <hr className='line'></hr>
-        <h11 className='t3'>About this Tier</h11>
+        <h11 className='t3'>~ $105.20</h11>
         <hr className='line'></hr>
-        <div className=' button'>
-          <Button />
-        </div>
       </div>
     </div>
 
-    <div className='bio2'>
-        <h10 className='bio-header'> ABOUT ME</h10>
-        <h11 className='bio-content'> My name is David Lin, a second year student at the unviersty of Toronto,
-        My name is David Lin, a second year student at the unviersty of Toronto
-        My name is David Lin, a second year student at the unviersty of Toronto
-        My name is David Lin, a second year student at the unviersty of Toronto
-        My name is David Lin, a second year student at the unviersty of Toronto
-        My name is David Lin, a second year student at the unviersty of Toronto
-        My name is David Lin, a second year student at the unviersty of Toronto
-        My name is David Lin, a second year student at the unviersty of Toronto</h11>
-    </div>
 
-    <div class='float-container2'>
-      <div class='float-child'>
-        <h7 className="t1">PREVIEW</h7>
-        <hr className='line'></hr>
-        <div className='preview'>
-            <img className="preview-img" src={image} alt="picture" />
+    <div class='float-container-p-2'>
+  
+
+        <div class='float-child'>
+            <h7 className="t1">COIN A</h7>
+            <hr className='line'></hr>
+            <h7 className="t1">25 COINS</h7>
+            <hr className='line'></hr>
+            <h11 className='t1'>~ $28.80</h11>
+            <hr className='line'></hr>
         </div>
-      </div>
-      <div class='float-child'>
-        <h8 className="t2">PREVIEW</h8>
-        <hr className='line'></hr>
-        <div className='preview'>
-            <img className="preview-img" src={image} alt="picture" />
+
+        <div class='float-child'>
+            <h8 className="t2">COIN B</h8>
+            <hr className='line'></hr>
+            <h8 className="t2">50 COINS</h8>
+            <hr className='line'></hr>
+            <h11 className='t2'>~ $57.60</h11>
+            <hr className='line'></hr>
         </div>
-      </div>
-      <div class='float-child'>
-        <h9 className="t3">PREVIEW</h9>
-        <hr className='line'></hr>
-        <div className='preview'>
-            <img className="preview-img" src={image} alt="picture" />
+
+        <div class='float-child'>
+            <h9 className="t3">COIN C</h9>
+            <hr className='line'></hr>
+            <h9 className="t1">100 COINS</h9>
+            <hr className='line'></hr>
+            <h11 className='t3'>~ $105.20</h11>
+            <hr className='line'></hr>
         </div>
-      </div>
-    </div>
+
+        <div className='wallet'>
+            <h6 className="sub-p">YOUR POSTS</h6>
+            <h7 className="sub-p-1"> YOUR THREE MOST RECENT POSTS</h7>
+            <hr style={{color:"black"}}/>
+            <button className='more-posts-button' >MORE</button>
+
+        </div>
+</div>
+
   </div>
   );
 }
