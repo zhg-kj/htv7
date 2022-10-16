@@ -37,11 +37,11 @@
 .userHeaderInfo h4{
     font-weight: bold;
     font-size: 15px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 .userHeaderInfo h5{
     font-size: 13px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     align-self: baseline;
 }
 
