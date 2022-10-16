@@ -45,13 +45,14 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    
+
     top: 500px;
     width: 100%;
 }
 
 .sub{
     font-size: 2em;
+
 }
 
 .bio2 {
@@ -70,8 +71,13 @@
     border: 5px solid white;
     margin: 3cm;
     margin-right: 0;
-    
+
     left: -2cm;
 }
 
-
+.gallery{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20cm;
+    justify-content: space-around;
+}
