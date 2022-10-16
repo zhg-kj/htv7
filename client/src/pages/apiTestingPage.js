@@ -7,13 +7,19 @@ const Testing = (props) => {
   const [desoApi, setDesoApi] = useState(null);
 
   useEffect(() => {
+
     const deso = new DesoApi();
     setDesoApi(deso);
+
   }, []);
 
   const submitPost = async () => {
-    console.log(props.publicKey)
-    await desoApi.submitPost(props.publicKey, "Another test")
+    const body = 'Fuck Web 3'
+
+    const rtnSubmitPost = await desoApi.submitPost(props.publicKey,  body)
+    const transactionHex = rtnSubmitPost.TransactionHex
+    const signedTransactionHex = await props.desoIdentity.signTxAsync(transactionHex)
+    const result = await desoApi.submitTransaction(signedTransactionHex) 
   }
 
   const getSingleProfile = async () => {
@@ -28,7 +34,7 @@ const Testing = (props) => {
 
   return (
     <div>
-      <button onClick={() => submitPost()}>Submit Posts</button>
+      <button onClick={submitPost}>Submit Posts</button>
       <button onClick={() => getSingleProfile()}>Get Profile</button>
       <button onClick={() => getPostsForPublicKey()}>Get Post</button>
       <ImageGallery />
