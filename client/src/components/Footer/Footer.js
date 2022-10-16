@@ -2,14 +2,15 @@ import React from 'react';
 
 import "./Footer.css";
 import socialMedia from "../../assets/socialMedia.png";
-import logo from "../../assets/thePrivatebitLogo.png";
 
 
 export class Footer extends React.Component{
     render() {
         return(
             <div className="footerContainer">
-                <img src={logo} className='logo'/>
+                <div>
+
+                </div>
                 <div className="footerContent">
                     <div className="firstCol">
                         <div className='settingBtn'>

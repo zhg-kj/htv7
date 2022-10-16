@@ -29,13 +29,6 @@
 }
 
 
-.logo{
-    height: 150px;
-    width: 150px;
-    margin-left: 80px;
-    filter: invert(100);
-}
-
 .settingBtn{
     display: flex;
     flex-direction: column;
