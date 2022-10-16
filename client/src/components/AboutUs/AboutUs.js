@@ -1,7 +1,7 @@
 import React from 'react';
 
 import "./AboutUs.css"
-import webIntroPic from "../../Assets/WebIntro.png";
+import webIntroPic from "../../assets/WebIntro.png";
 
 export class AboutUs extends React.Component{
     render() {

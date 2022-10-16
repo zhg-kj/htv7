@@ -7,7 +7,7 @@ import {SearchBar} from "../SearchBar/SearchBar";
 import {Introduction} from "../Introduction/Introduction";
 import {Join} from "../Join/Join";
 
-export class Home extends React.Component{
+export default class Home extends React.Component{
     render(){
         return(
             <div>

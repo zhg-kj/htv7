@@ -1,6 +1,6 @@
 import React from 'react';
 
-import blogpost from "../../Assets/blogpost.jpeg";
+import blogpost from "../../assets/blogpost.jpeg";
 import "./CreatedContent.css";
 
 

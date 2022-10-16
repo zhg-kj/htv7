@@ -6,12 +6,13 @@ import { Route, Routes } from "react-router-dom";
 // We import all the components we need in our app
 import Navbar from "./components/navbar/navbar";
 import Edit from "./components/edit";
-import Create from "./components/create";
+import Create from "./components/create/create";
 import Login from "./pages/login";
 import Testing from "./pages/apiTestingPage";
 import Creator from"./pages/creator";
 import ViewContent from "./pages/viewContent";
-import {Home} from "./components/Home/Home";
+import Home from "./components/Home/Home";
+import RecordList from "./components/recordList";
 
 // Misc
 import localStorageTTL from "./components/localStorageTTL";
@@ -51,6 +52,7 @@ const App = () => {
         ></iframe>
         <Routes>
           <Route exact path="/" element={<Testing publicKey={publicKey} />} />
+          <Route exact path="/home" element={<Home />} />
           <Route exact path="/record" element={<RecordList publicKey={publicKey} setPublicKey={setPublicKey} setLoggedIn={setLoggedIn}/>} />
           <Route path="/content/:id" element={<ViewContent />} />
           <Route path="/creator" element={<Creator />} />
