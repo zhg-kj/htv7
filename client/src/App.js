@@ -14,6 +14,7 @@ import Profile from "./pages/profile";
 import ViewContent from "./pages/viewContent";
 import Home from "./components/Home/Home";
 import RecordList from "./components/recordList";
+import SearchPage from "./pages/SearchPage";
 
 // Misc
 import localStorageTTL from "./components/localStorageTTL";
@@ -68,6 +69,7 @@ const App = () => {
             <Route path="/create" element={<Create />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/search" element={<SearchPage />} />
         </Routes>
       </div>
     );
