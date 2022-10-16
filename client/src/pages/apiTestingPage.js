@@ -26,6 +26,7 @@ const Testing = (props) => {
   const getSingleProfile = async () => {
     const data = await desoApi.getSingleProfile("BC1YLjRTtiFhTSgEXbKG7RzgiMxsNQCFytqR24rQzzhpb1adV4pUZN9")
     console.log(data)
+    console.log(data["Profile"]["DESOBalanceNanos"] / 1000000000)
   }
 
   const checkUserHoldCreatorCoin = async (userPublicKey, creatorPublicKey) => {
