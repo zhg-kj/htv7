@@ -1,4 +1,5 @@
-# Hack The Valley 7 PROJECT, Winner of The Best Use of DeSo Award: PrivateBit
+# Hack The Valley 7 PROJECT
+## Winner of The Best Use of DeSo Award: PrivateBit
 
 [privatebit.world](https://privatebit.world)
 
