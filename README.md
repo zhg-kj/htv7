@@ -1,4 +1,6 @@
-# HTV7 PROJECT
+# Hack Thte Valley 7 PROJECT: PrivateBit
+
+privatebit.world
 
 ## Inspiration
 Patreon!
