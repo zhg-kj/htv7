@@ -1,6 +1,6 @@
 # Hack Thte Valley 7 PROJECT: PrivateBit
 
-privatebit.world
+[privatebit.world](https://privatebit.world)
 
 ## Inspiration
 Patreon!
