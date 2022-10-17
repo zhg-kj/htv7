@@ -1,6 +1,8 @@
 # Hack The Valley 7 PROJECT
 ## Winner of The Best Use of DeSo Award: PrivateBit
 
+https://user-images.githubusercontent.com/17074619/196231314-e539dec3-f00a-42a4-9ba1-dc808c88c63e.mp4
+
 [privatebit.world](https://privatebit.world)
 
 ## Inspiration
@@ -22,11 +24,6 @@ We were able to come up with a creative idea and getting the DeSo API up and run
 How to read and use large scale API documentation.
 
 ## Demo
-
-### Video
-https://user-images.githubusercontent.com/17074619/196231314-e539dec3-f00a-42a4-9ba1-dc808c88c63e.mp4
-
-### Images
 ![pic1](https://user-images.githubusercontent.com/17074619/196231850-e5a2219e-fd76-4f37-8a2f-79159851af6b.jpeg)
 ![pic2](https://user-images.githubusercontent.com/17074619/196231859-858097f9-6f91-4e0c-9bc7-e5ed8e32732a.jpeg)
 ![pic3](https://user-images.githubusercontent.com/17074619/196231879-a9282d5b-422f-46e4-a5f7-0b07089e3d81.jpeg)
